@@ -1,128 +1,107 @@
-/* ===== Overall Biology ===== */
+/* ===== General Page Styles ===== */
 body {
   font-family: Arial, sans-serif;
-  background: #f0f2f5;
   margin: 0;
-  padding: 0;
+  background: #f4f6fb;
+  color: #333;
 }
 
+/* ===== Header ===== */
 .header {
-  display: flex;
-  align-items: center;
-  background: #003366; /* deep blue */
+  background: #003366;  /* UniMAP Blue */
   color: white;
-  padding: 15px;
+  text-align: center;
+  padding: 20px;
 }
 
-.header .logo {
-  height: 60px;
-  margin-right: 15px;
+.header h1 {
+  margin: 10px 0 0;
+  font-size: 1.8em;
 }
 
-/* ===== Main Container ===== */
+.unimap-logo {
+  width: 100px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* ===== Container ===== */
 .container {
-  max-width: 720px;
-  margin: 30px auto;
-  background: #fff;
-  padding: 30px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* ===== Instructions Section ===== */
 .instructions {
-  background: #fff8e1;
-  border: 1px solid #fbc02d;
-  padding: 16px;
+  background: #fff8e1;             /* soft yellow background */
+  border: 1px solid #fbc02d;       /* golden border */
+  padding: 15px;
   border-radius: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .instructions h2 {
-  color: #e65100;
+  color: #e65100;                  /* dark orange heading */
   margin-bottom: 10px;
-  font-size: 1.4em;
-}
-
-.instructions p {
-  font-size: 1em;
-  margin: 6px 0;
-  line-height: 1.4;
+  font-size: 1.3em;
 }
 
 .instructions table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 12px;
-  font-size: 0.95em;
+  margin-top: 10px;
 }
 
-.instructions table,
-.instructions th,
-.instructions td {
+.instructions th, .instructions td {
   border: 1px solid #999;
-  padding: 8px;
+  padding: 10px;
   text-align: left;
 }
 
 .instructions th {
-  background: #f1f1f1;
-  color: #333;
+  background-color: #003366;
+  color: white;
 }
 
-/* ===== Booking Form Styling ===== */
+.instructions tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+/* ===== Form ===== */
 form {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
-label {
-  margin: 10px 0 4px;
+form label {
   font-weight: bold;
 }
 
-input {
+form input, form button {
   padding: 10px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
 }
 
-button {
-  margin-top: 20px;
-  padding: 14px;
-  background: #004080;
+form input:focus {
+  border-color: #003366;
+  outline: none;
+}
+
+form button {
+  background: #003366;
   color: white;
-  font-size: 1em;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #002d4d;
-}
-
-/* ===== Message Box ===== */
-#message {
-  margin-top: 20px;
-  padding: 12px;
-  border-radius: 6px;
-  display: none;
   font-weight: bold;
-  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#message.success {
-  background: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #2e7d32;
-}
-
-#message.error {
-  background: #ffebee;
-  color: #c62828;
-  border: 1px solid #c62828;
+form button:hover {
+  background: #0055a5;
 }
