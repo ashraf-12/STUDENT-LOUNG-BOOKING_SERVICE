@@ -1,8 +1,10 @@
 document.getElementById("bookingForm").addEventListener("submit", async function(event) {
   event.preventDefault();
-  
+
   const fromDate = new Date(document.getElementById("from").value);
   const now = new Date();
+
+  // Validation: must be at least 3 hours before booking
   const diffHours = (fromDate - now) / (1000 * 60 * 60);
   if (diffHours < 3) {
     showMessage("⚠️ Booking must be made at least 3 hours in advance!", "error");
@@ -30,14 +32,15 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     } else {
       showMessage("❌ Error submitting booking. Please try again.", "error");
     }
-  } catch {
-    showMessage("❌ Network error. Please try again later.", "error");
+  } catch (error) {
+    showMessage("⚠️ Network error. Please try again later.", "error");
   }
 });
 
-function showMessage(text, type) {
-  const msg = document.getElementById("message");
-  msg.textContent = text;
-  msg.className = type;
-  msg.style.display = "block";
+function showMessage(message, type) {
+  const msgBox = document.getElementById("formMessage");
+  msgBox.textContent = message;
+  msgBox.className = ""; // reset
+  msgBox.classList.add(type, "show");
+  msgBox.style.display = "block";
 }
